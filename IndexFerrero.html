@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rapporti di sostenibilità Ferrero</title>
+<style>
+:root {
+--bg: #f4f7f1; --surface: #ffffff; --surface-2: #eef5ea; --text: #1f2a1f; --muted:
+#5b6a5c; --primary: #2f6b3d; --primary-dark: #1f4d2b; --accent: #d9ead3; --border:
+#d9e4d7; --shadow: 0 10px 30px rgba(0, 0, 0, 0.08); --radius: 20px; --max: 1180px;
+}
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: linear-gradient(180deg, #f7faf5 0%, #edf5eb 100%);
+color: var(--text);
+line-height: 1.6;
+}
+a {
+color: inherit;
+text-decoration: none;
+}
+img {
+max-width: 100%;
+display: block;
+}
+.container {
+width: min(var(--max), calc(100% - 32px));
+margin: 0 auto;
+}
+.topbar {
+position: sticky;
+top: 0;
+z-index: 50;
+backdrop-filter: blur(10px);
+background: rgba(247, 250, 245, 0.86);
+border-bottom: 1px solid rgba(47, 107, 61, 0.08);
+}
+.topbar-inner {
+min-height: 72px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+gap: 20px;
+.brand {
+font-size: 1.1rem;
+font-weight: 700;
+color: var(--primary-dark);
+letter-spacing: 0.2px;
+}
+.nav {
+display: flex;
+gap: 18px;
+flex-wrap: wrap;
+}
+.nav a {
+color: var(--muted);
+font-size: 0.95rem;
+font-weight: 600;
+transition: color 0.2s ease;
+}
+.nav a:hover {
+color: var(--primary);
+}
+.hero {
+padding: 72px 0 44px;
+}
+.hero-grid {
+display: grid;
+grid-template-columns: 1.2fr 0.8fr;
+gap: 28px;
+align-items: stretch;
+}
+.hero-card,
+.summary-card,
+.section-card,
+.pillar-card,
+.download-card,
+.stats-card,
+.footer-card {
+background: var(--surface);
+border: 1px solid var(--border);
+}
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+.hero-card {
+padding: 42px;
+background: linear-gradient(135deg, #ffffff 0%, #f0f7ec 100%);
+}
+.eyebrow {
+display: inline-block;
+padding: 8px 14px;
+border-radius: 999px;
+background: var(--accent);
+color: var(--primary-dark);
+font-weight: 700;
+font-size: 0.86rem;
+margin-bottom: 18px;
+}
+h1 {
+font-size: clamp(2rem, 5vw, 3.4rem);
+line-height: 1.1;
+margin-bottom: 18px;
+color: var(--primary-dark);
+}
+.hero-card p {
+font-size: 1.05rem;
+color: var(--muted);
+max-width: 60ch;
+margin-bottom: 26px;
+}
+.hero-buttons {
+display: flex;
+flex-wrap: wrap;
+gap: 14px;
+}
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 14px 22px;
+border-radius: 999px;
+font-weight: 700;
+}
+transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+.btn:hover {
+transform: translateY(-2px);
+}
+.btn-primary {
+background: var(--primary);
+color: #fff;
+box-shadow: 0 10px 24px rgba(47, 107, 61, 0.22);
+}
+.btn-secondary {
+background: var(--surface);
+border: 1px solid var(--border);
+color: var(--primary-dark);
+}
+.summary-card {
+padding: 28px;
+display: grid;
+gap: 18px;
+align-content: start;
+}
+.summary-card h2 {
+font-size: 1.25rem;
+color: var(--primary-dark);
+}
+.mini-stat {
+padding: 16px;
+border-radius: 16px;
+background: var(--surface-2);
+border: 1px solid #dde8da;
+}
+.mini-stat strong {
+display: block;
+font-size: 1.45rem;
+color: var(--primary);
+margin-bottom: 4px;
+}
+main section {
+padding: 18px 0 18px;
+}
+.section-card {
+padding: 34px;
+}
+.section-title {
+font-size: clamp(1.5rem, 3vw, 2.3rem);
+margin-bottom: 10px;
+color: var(--primary-dark);
+}
+.section-lead {
+color: var(--muted);
+max-width: 75ch;
+margin-bottom: 24px;
+}
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 16px;
+margin-top: 22px;
+}
+.stats-card {
+padding: 22px 18px;
+text-align: center;
+background: linear-gradient(180deg, #ffffff 0%, #f4f8f2 100%);
+}
+.stats-card strong {
+display: block;
+font-size: 1.65rem;
+color: var(--primary);
+margin-bottom: 6px;
+}
+.pillars-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+margin-top: 22px;
+}
+.pillar-card {
+padding: 26px;
+}
+.pillar-card h3 {
+color: var(--primary-dark);
+font-size: 1.2rem;
+margin-bottom: 10px;
+}
+.pillar-card p {
+color: var(--muted);
+margin-bottom: 16px;
+}
+.pillar-card ul {
+padding-left: 18px;
+color: var(--text);
+}
+.pillar-card li + li {
+margin-top: 8px;
+}
+.downloads-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+margin-top: 24px;
+}
+.download-card {
+padding: 24px;
+display: flex;
+flex-direction: column;
+gap: 14px;
+background: linear-gradient(180deg, #ffffff 0%, #f6faf4 100%);
+}
+.download-card small {
+color: var(--muted);
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+}
+.download-card h3 {
+color: var(--primary-dark);
+font-size: 1.2rem;
+}
+.download-card p {
+color: var(--muted);
+flex-grow: 1;
+}
+.download-card .btn {
+width: 100%;
+}
+.note {
+margin-top: 16px;
+color: var(--muted);
+font-size: 0.95rem;
+}
+footer {
+padding: 22px 0 40px;
+}
+.footer-card {
+padding: 24px;
+color: var(--muted);
+text-align: center;
+font-size: 0.95rem;
+}
+@media (max-width: 980px) {
+.hero-grid,
+.pillars-grid,
+.downloads-grid,
+.stats-grid {
+grid-template-columns: 1fr;
+}
+.hero-card,
+.summary-card,
+.section-card {
+padding: 26px;
+}
+}
+@media (max-width: 640px) {
+.topbar-inner {
+flex-direction: column;
+align-items: flex-start;
+}
+padding: 14px 0;
+.nav {
+gap: 12px;
+}
+.hero {
+padding-top: 34px;
+}
+.btn {
+width: 100%;
+}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+<div class="container topbar-inner">
+<a href="#home" class="brand">Ferrero • Rapporti di sostenibilità</a>
+<nav class="nav">
+<a href="#azienda">Azienda</a>
+<a href="#sostenibilita">Sostenibilità</a>
+<a href="#risultati">Risultati</a>
+<a href="#download">Download</a>
+</nav>
+</div>
+</header>
+<main id="home">
+<section class="hero">
+<div class="container hero-grid">
+<article class="hero-card">
+<span class="eyebrow">Project Work • Tecnologia web per la sostenibilità
+d’impresa</span>
+<h1>Rapporti di sostenibilità Ferrero</h1>
+<p>
+Questa pagina web presenta in forma sintetica l’impegno di Ferrero verso la
+sostenibilità,
+mettendo in evidenza le principali iniziative ambientali, sociali e produttive
+dell’azienda
+e consentendo il download dei report di sostenibilità pubblicati negli ultimi anni.
+</p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="#download">Scarica i report</a>
+<a class="btn btn-secondary" href="#sostenibilita">Scopri i 4 pilastri</a>
+</div>
+</article>
+<aside class="summary-card">
+<h2>In breve</h2>
+<div class="mini-stat">
+<strong>€18,4 miliardi</strong>
+<span>Fatturato netto consolidato totale</span>
+</div>
+<div class="mini-stat">
+<strong>37</strong>
+<span>Stabilimenti di produzione</span>
+</div>
+<div class="mini-stat">
+<strong>47.517</strong>
+<span>Dipendenti totali</span>
+</div>
+<div class="mini-stat">
+<strong>170+</strong>
+<span>Paesi in cui sono venduti i prodotti Ferrero</span>
+</div>
+</aside>
+</div>
+</section>
+<section id="azienda">
+<div class="container">
+<article class="section-card">
+<h2 class="section-title">Chi è Ferrero</h2>
+<p class="section-lead">
+Ferrero è un gruppo internazionale del settore alimentare, noto per marchi come
+Nutella,
+Kinder, Ferrero Rocher e Tic Tac. L’azienda opera in oltre 170 Paesi ed è
+impegnata nel
+comunicare in modo trasparente i risultati raggiunti in ambito economico,
+ambientale e sociale
+attraverso la pubblicazione periodica dei propri rapporti di sostenibilità.
+</p>
+<div class="stats-grid">
+<div class="stats-card">
+<strong>1,59 mln</strong>
+<span>Tonnellate di produzione totale</span>
+</div>
+<div class="stats-card">
+<strong>37</strong>
+<span>Stabilimenti</span>
+</div>
+<div class="stats-card">
+<strong>47.517</strong>
+<span>Dipendenti</span>
+</div>
+<div class="stats-card">
+<strong>170+</strong>
+<span>Paesi serviti</span>
+</div>
+<div class="stats-card">
+<strong>€18,4 mld</strong>
+<span>Fatturato consolidato</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section id="sostenibilita">
+<div class="container">
+<article class="section-card">
+<h2 class="section-title">Il quadro di sostenibilità</h2>
+<p class="section-lead">
+Ferrero organizza la propria strategia di sostenibilità attorno a quattro pilastri
+principali:
+protezione dell’ambiente, approvvigionamento sostenibile degli ingredienti,
+promozione del consumo
+responsabile e valorizzazione delle persone. Questo approccio consente
+all’azienda di integrare la
+sostenibilità nei processi produttivi, nella filiera e nella cultura aziendale.
+</p>
+<div class="pillars-grid">
+<article class="pillar-card">
+<h3>1. Proteggere l’ambiente</h3>
+<p>
+Ferrero investe nella riduzione dell’impatto ambientale attraverso
+miglioramenti su energia,
+packaging, rifiuti, acqua e logistica.
+</p>
+<ul>
+<li>92,10% del packaging progettato per essere riciclabile</li>
+<li>90,1% di elettricità certificata da fonti rinnovabili acquistata</li>
+<li>89,3% dei rifiuti recuperati</li>
+<li>Riduzione del 21,7% delle emissioni Scope 1 e Scope 2 rispetto al
+2017/18</li>
+</ul>
+</article>
+<article class="pillar-card">
+<h3>2. Approvvigionamento sostenibile</h3>
+<p>
+L’azienda promuove una filiera più trasparente e responsabile, con attenzione
+particolare a cacao,
+nocciole, olio di palma, latticini e uova.
+</p>
+<ul>
+<li>Oltre il 90% degli ingredienti è tracciabile fino all’origine</li>
+<li>99% del cacao da fonti certificate o standard indipendenti</li>
+<li>100% di prodotti a base di uova cage-free in Europa dal 2014</li>
+<li>Sostegno a pratiche agricole rigenerative e partnership locali</li>
+</ul>
+</article>
+<article class="pillar-card">
+<h3>3. Consumo responsabile</h3>
+<p>
+Ferrero dichiara di porre attenzione alla qualità dei prodotti, alla sicurezza
+alimentare,
+al marketing responsabile e a una comunicazione trasparente con i
+consumatori.
+</p>
+<ul>
+<li>85% dei prodotti in porzioni inferiori a 130 kcal</li>
+<li>100% di rispetto dei principi di marketing responsabile</li>
+<li>100% degli stabilimenti certificati secondo standard riconosciuti dalla
+GFSI</li>
+<li>Forte attenzione a etichettatura, qualità e sicurezza</li>
+</ul>
+</article>
+<article class="pillar-card">
+<h3>4. Persone al centro</h3>
+<p>
+La sostenibilità, per Ferrero, riguarda anche dipendenti, comunità e filiera, con
+iniziative di
+inclusione, sviluppo interno e promozione del benessere.
+</p>
+<ul>
+<li>3,7 milioni di bambini coinvolti in 35 Paesi nel programma Kinder Joy of
+Moving</li>
+<li>4.000 dipendenti coinvolti in iniziative per uno stile di vita attivo</li>
+<li>Lancio del People Development Framework per la crescita dei talenti</li>
+<li>Focus su diritti umani, sicurezza e inclusione</li>
+</ul>
+</article>
+</div>
+</article>
+</div>
+</section>
+<section id="risultati">
+<div class="container">
+<article class="section-card">
+<h2 class="section-title">Risultati principali</h2>
+<p class="section-lead">
+Dall’analisi dell’ultimo rapporto emergono alcuni indicatori chiave che mostrano
+l’impegno di Ferrero
+nel conciliare sviluppo industriale e responsabilità ambientale e sociale.
+</p>
+<div class="stats-grid">
+<div class="stats-card">
+<strong>92,10%</strong>
+<span>Packaging progettato per il riciclo</span>
+</div>
+<div class="stats-card">
+<strong>90,1%</strong>
+<span>Elettricità certificata rinnovabile</span>
+</div>
+<div class="stats-card">
+<strong>89,3%</strong>
+<span>Rifiuti recuperati</span>
+</div>
+<div class="stats-card">
+<strong>&gt;90%</strong>
+<span>Ingredienti tracciabili</span>
+</div>
+<div class="stats-card">
+<strong>85%</strong>
+<span>Prodotti in porzioni &lt;130 kcal</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section id="download">
+<div class="container">
+<article class="section-card">
+<h2 class="section-title">Download dei report</h2>
+<p class="section-lead">
+Di seguito sono riportati alcuni dei principali report di sostenibilità Ferrero
+consultabili online.
+I pulsanti rimandano ai documenti PDF ufficiali pubblicati dall’azienda.
+</p>
+<div class="downloads-grid">
+<article class="download-card">
+<small>Anno fiscale 2023/24</small>
+<h3>Rapporto di Sostenibilità 2024</h3>
+<p>
+Sedicesimo rapporto di sostenibilità del Gruppo Ferrero, con i principali
+progressi relativi a
+ambiente, filiera, consumo responsabile e persone.
+</p>
+<a
+class="btn
+btn-primary"
+href="https://www.ferrero.com/it/sites/ferrero_it/files/2024-
+09/ferrero_csr_final_28524.pdf
+" target="_blank" rel="noopener noreferrer">Apri PDF</a>
+</article>
+<article class="download-card">
+<small>Anno fiscale 2022/23</small>
+<h3>Rapporto di Sostenibilità 2023</h3>
+<p>
+Documento ufficiale Ferrero con indicatori di sostenibilità, obiettivi aziendali e
+aggiornamenti
+sulla filiera produttiva e sull’impatto sociale.
+</p>
+<a
+class="btn
+btn-primary"
+href="https://www.ferrero.com/it/sites/ferrero_it/files/2023-10/ferrerosr22_
+230621.pdf"
+target="_blank" rel="noopener noreferrer">Apri PDF</a>
+</article>
+<article class="download-card">
+<small>Anno fiscale 2021/22</small>
+<h3>Rapporto di Sostenibilità 2022</h3>
+<p>
+Report precedente utile per confrontare l’evoluzione dei risultati aziendali nel
+tempo e osservare
+la continuità delle politiche di sostenibilità.
+</p>
+<a
+class="btn
+btn-primary"
+href="https://www.ferrero.com/it/sites/ferrero_it/files/2023-
+05/ferrero_book_1307_interact
+ive-compressed-1.pdf" target="_blank" rel="noopener noreferrer">Apri PDF</a>
+</article>
+</div>
+</article>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<div class="footer-card">
+Project Work universitario • Daniele Vittore Poleggi • Corso di Informatica per le
+Aziende Digitali • Pagina web realizzata in HTML e CSS
+</div>
+</div>
+</footer>
+</body>
+</html>
